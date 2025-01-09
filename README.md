@@ -15,13 +15,13 @@ node index.js
 The application will then ask a series of questions, which can be answered via the same terminal. Once completed the prompts are all returned, the application will generate the file to the user's chosen location. This file defaults to README.md.
 
 The following instructions are for customizing the file pathing:
-![alt text](Develop\images\file-pathing-instructions.png)
+![alt text](https://github.com/Bakenavva/README-Generator/blob/main/Develop/images/file-pathing-instructions.png)
 - path.join() allows for a custom file path to be set so that we can decide where we want the generated file to be sent. 
 - The default value found on line 64 of index.js, process.cwd() calls the current working directory. This means the file path will be set to C:\User\...\Develop; additional parameters will output a new backslash alongside the inputted value. As it is now the function will generate a new folder called "sample".
 Ex: path.join(process.cwd(), "newFolder"); will output C:\User\...\Develop\
 
 The following allows for changing the file name & type:
-![alt text](Develop\images\file-naming-instructions.png)
+![alt text](https://github.com/Bakenavva/README-Generator/blob/main/Develop/images/file-naming-instructions.png)
 - Changing the parameter value of "README.md", within the writeToFile() on line 84 will allow for us to change the name of the file, and the extension being changed can allow for changing the file type.
 
 ## Link to video demo and repo. 
