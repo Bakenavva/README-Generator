@@ -2,7 +2,7 @@
 import fs from "fs";
 import path from "path";
 import inquirer from "inquirer";
-import generateMarkdown from "./utils/generateMarkdown";
+import generateMarkdown from "./utils/generateMarkdown.js";
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -59,10 +59,12 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
+  // path.join(process.cwd()) returns path to current working directory. Additional parameters will be append values to the path as strings; Can create new folders
+  // Example: path.join(process.cwd(), "helloWorld") will return C:\...\Develop\helloWorld; folder of helloWorld is created in Develop.
   const outputDir = path.join(process.cwd());
   try {
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir);
+    if (!fs.existsSync(outputDir)) { // Check if the directory exists
+      fs.mkdirSync(outputDir); // Create the directory if it doesn't exist
     }
     const filePath = path.join(outputDir, fileName);
     fs.writeFileSync(filePath, data);
@@ -78,8 +80,8 @@ function init() {
   inquirer.prompt(questions).then((data) => {
     console.log(`Generating README...`);
     try {
-      const markdown = generateMarkdown(data);
-      writeToFile("README.md", markdown);
+      const markdown = generateMarkdown(data); // Imported function from generateMarkdown.js;
+      writeToFile("README.md", markdown); // Create file with imported template w/ inquirer values;  File name can be changed here (first parameter)
       console.log(`Success`);  
     }  catch (err) {
       console.error(`Error generating README:`, err);
