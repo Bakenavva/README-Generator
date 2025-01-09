@@ -42,7 +42,7 @@ ${data.test}
 ## Questions
 Further questions can reach me via:
 - GitHub: [${data.github}](https://github.com/${data.github})
-- Email: ${data.email}`;
+- Email:  ${data.email}`;
 }
 
 export default generateMarkdown;

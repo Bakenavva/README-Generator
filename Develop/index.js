@@ -61,7 +61,7 @@ const questions = [
 function writeToFile(fileName, data) {
   // path.join(process.cwd()) returns path to current working directory. Additional parameters will be append values to the path as strings; Can create new folders
   // Example: path.join(process.cwd(), "helloWorld") will return C:\...\Develop\helloWorld; folder of helloWorld is created in Develop.
-  const outputDir = path.join(process.cwd());
+  const outputDir = path.join(process.cwd(), "sample");
   try {
     if (!fs.existsSync(outputDir)) { // Check if the directory exists
       fs.mkdirSync(outputDir); // Create the directory if it doesn't exist
